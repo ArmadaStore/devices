@@ -43,11 +43,13 @@ func (cargoInfo *CargoInfo) Send(fileName string) {
 	// single shot file transfer
 	// the data will be stored in
 
-	fileBuf := ioutil.ReadFile(fileName)
+	fileBuf, err := ioutil.ReadFile(fileName)
+	cmd.CheckError(err)
+
 	dts := taskToCargo.DataToStore{
 		FileName:   fileName,
 		FileBuffer: fileBuf,
-		FileSize:   len(fileBuf),
+		FileSize:   int64(len(fileBuf)),
 		FileType:   filepath.Ext(fileName),
 	}
 
@@ -55,7 +57,6 @@ func (cargoInfo *CargoInfo) Send(fileName string) {
 	cmd.CheckError(err)
 
 	fmt.Println(ack.GetAck())
-
 }
 
 func (cargoInfo *CargoInfo) SendStream(fileName string, fileBuffer []byte) {

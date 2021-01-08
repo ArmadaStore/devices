@@ -1,8 +1,9 @@
 cloud.google.com/go v0.26.0/go.mod h1:aQUYkXzVsufM+DwF1aE+0xfcU+56JwCaLick0ClmMTw=
-github.com/ArmadaStore/cargo v0.0.0-20201227050135-8fd187884fb7 h1:+WO8DLei9nqroAeFIZiFeuVmu9svcvnXZGCeOMp8y5w=
-github.com/ArmadaStore/cargo v0.0.0-20201227050135-8fd187884fb7/go.mod h1:i3OI/LMotgtwg3hHsRM6uA+Xllfx32Uy+HyxwHCal+E=
-github.com/ArmadaStore/comms v0.0.0-20201227024450-e09d2955904b h1:dwAuPAKdB1/lRBlFU284tgycV9fGDsTrd8Kym9UHun0=
-github.com/ArmadaStore/comms v0.0.0-20201227024450-e09d2955904b/go.mod h1:OouJxx1pb5NTL3XCjyql2dwsyQIprH0nciAne+av7NU=
+github.com/ArmadaStore/cargo v0.0.0-20210108200558-0eb73e2b04e2 h1:cIXkbsuUc0I1aZvuvUx0bv2ygX9x8v0Mmit5YaS2VXU=
+github.com/ArmadaStore/cargo v0.0.0-20210108200558-0eb73e2b04e2/go.mod h1:U+OoOqUu5WM8xdXbXJRblCobceQ+ijYp2zW4uIjVLS8=
+github.com/ArmadaStore/comms v0.0.0-20210108194059-2511a487ebdc/go.mod h1:OouJxx1pb5NTL3XCjyql2dwsyQIprH0nciAne+av7NU=
+github.com/ArmadaStore/comms v0.0.0-20210108195012-cc92ea560945 h1:Qwm6mLFSmbkhsARz9nXnFG7NFOqVDjSXF3sEtIR9d2I=
+github.com/ArmadaStore/comms v0.0.0-20210108195012-cc92ea560945/go.mod h1:OouJxx1pb5NTL3XCjyql2dwsyQIprH0nciAne+av7NU=
 github.com/BurntSushi/toml v0.3.1/go.mod h1:xHWCNGjB5oqiDr8zfno3MHue2Ht5sIBksp03qcyfWMU=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
@@ -32,7 +33,6 @@ github.com/google/go-cmp v0.4.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/
 github.com/google/go-cmp v0.5.0 h1:/QaMHBdZ26BB3SSst0Iwl10Epc+xhTquomWX0oZEB6w=
 github.com/google/go-cmp v0.5.0/go.mod h1:v8dTdLbMG2kIc/vJvl+f65V22dbkXbowE6jgT/gNBxE=
 github.com/google/uuid v1.1.2/go.mod h1:TIyPZe4MgqvfeYDBFedMoGGpEw/LqOeaOT+nhxU+yHo=
-github.com/phayes/freeport v0.0.0-20180830031419-95f893ade6f2/go.mod h1:iIss55rKnNBTvrwdmkUpLnDpZoAHvWaiq5+iMmen4AE=
 github.com/pmezard/go-difflib v1.0.0/go.mod h1:iKH77koFhYxTK1pcRnkKkqfTogsbg7gZNVY4sRDYZ/4=
 github.com/prometheus/client_model v0.0.0-20190812154241-14fe0d1b01d4/go.mod h1:xMI15A0UPsDsEKsMN9yxemIoYk6Tm2C1GtYGdfGttqA=
 github.com/stretchr/objx v0.1.0/go.mod h1:HFkY916IF+rwdDfMAkV7OtwuqBVzrE8GR6GFx+wExME=

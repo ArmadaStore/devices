@@ -63,6 +63,20 @@ func (cargoInfo *CargoInfo) SendStream(fileName string, fileBuffer []byte) {
 
 }
 
+func (cargo *CargoInfo) Recv(fileName string) {
+
+	fileInfo := taskToCargo.FileInfo{FileName: fileName}
+	dtl, err := cargo.service.LoadFromCargo(context.Background(), &fileInfo)
+	cmd.CheckError(err)
+
+	fileBuffer := dtl.GetFileBuffer()
+	//fileSize := dts.GetFileSize()
+	//fileType := dts.GetFileType()
+
+	err = ioutil.WriteFile(fileName, fileBuffer, 0644)
+	cmd.CheckError(err)
+}
+
 func (cargoInfo *CargoInfo) CleanUp() {
 	cargoInfo.conn.Close()
 }

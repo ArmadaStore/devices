@@ -51,16 +51,13 @@ func (cargoInfo *CargoInfo) Send(fileName string) {
 		FileBuffer: fileBuf,
 		FileSize:   int64(len(fileBuf)),
 		FileType:   filepath.Ext(fileName),
+		AppID:      cargoInfo.AppID,
 	}
 
 	ack, err := cargoInfo.service.StoreInCargo(context.Background(), &dts)
 	cmd.CheckError(err)
 
 	fmt.Println(ack.GetAck())
-}
-
-func (cargoInfo *CargoInfo) SendStream(fileName string, fileBuffer []byte) {
-
 }
 
 func (cargo *CargoInfo) Recv(fileName string) {
@@ -75,6 +72,38 @@ func (cargo *CargoInfo) Recv(fileName string) {
 
 	err = ioutil.WriteFile(fileName, fileBuffer, 0644)
 	cmd.CheckError(err)
+}
+
+func (cargo *CargoInfo) Write(fileName string, content string) {
+	wtc := taskToCargo.WriteData{
+		FileName:   fileName,
+		FileBuffer: []byte(content),
+		WriteSize:  int64(len(content)),
+		AppID:      cargo.AppID,
+	}
+
+	ack, err := cargo.service.WriteToCargo(context.Background(), &wtc)
+	cmd.CheckError(err)
+
+	fmt.Println(ack.GetAck())
+}
+
+func (cargo *CargoInfo) Read(fileName string) string {
+	readInfo := taskToCargo.ReadInfo{FileName: fileName}
+	rfc, err := cargo.service.ReadFromCargo(context.Background(), &readInfo)
+	cmd.CheckError(err)
+
+	fileBuffer := rfc.GetFileBuffer()
+
+	return string(fileBuffer)
+}
+
+func (cargoInfo *CargoInfo) SendStream(fileName string, fileBuffer []byte) {
+
+}
+
+func (cargoInfo *CargoInfo) RecvStream(fileName string, fileBuffer []byte) {
+
 }
 
 func (cargoInfo *CargoInfo) CleanUp() {

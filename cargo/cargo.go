@@ -32,6 +32,8 @@ func InitCargo(IP string, Port string, AppID string, UserID string) *CargoInfo {
 	conn, err := grpc.Dial(IP+":"+Port, grpc.WithInsecure())
 	cmd.CheckError(err)
 
+	fmt.Println("Connection Success with", IP, "and", Port, "\n")
+
 	cargoInfo.conn = conn
 	cargoInfo.service = taskToCargo.NewRpcTaskToCargoClient(conn)
 

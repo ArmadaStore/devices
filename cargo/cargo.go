@@ -29,6 +29,8 @@ func InitCargo(IP string, Port string, AppID string, UserID string) *CargoInfo {
 	cargoInfo.AppID = AppID
 	cargoInfo.UserID = UserID
 
+	fmt.Println("Connecting to cargo ", IP, ":", Port, "\n")
+
 	conn, err := grpc.Dial(IP+":"+Port, grpc.WithInsecure())
 	cmd.CheckError(err)
 

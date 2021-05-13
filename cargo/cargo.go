@@ -93,7 +93,10 @@ func (cargo *CargoInfo) Write(fileName string, content string) {
 }
 
 func (cargo *CargoInfo) Read(fileName string) string {
-	readInfo := taskToCargo.ReadInfo{FileName: fileName}
+	readInfo := taskToCargo.ReadInfo{
+		FileName: fileName,
+		AppID:    cargo.AppID,
+	}
 	rfc, err := cargo.service.ReadFromCargo(context.Background(), &readInfo)
 	cmd.CheckError(err)
 

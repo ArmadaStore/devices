@@ -89,7 +89,7 @@ func (cargo *CargoInfo) Write(fileName string, content string) {
 	ack, err := cargo.service.WriteToCargo(context.Background(), &wtc)
 	cmd.CheckError(err)
 
-	fmt.Println(ack.GetAck())
+	// fmt.Println(ack.GetAck())
 }
 
 func (cargo *CargoInfo) Read(fileName string) string {

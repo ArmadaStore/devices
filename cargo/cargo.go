@@ -86,7 +86,7 @@ func (cargo *CargoInfo) Write(fileName string, content string) {
 		AppID:      cargo.AppID,
 	}
 
-	ack, err := cargo.service.WriteToCargo(context.Background(), &wtc)
+	_, err := cargo.service.WriteToCargo(context.Background(), &wtc)
 	cmd.CheckError(err)
 
 	// fmt.Println(ack.GetAck())
